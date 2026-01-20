@@ -30,7 +30,6 @@ const ResultPage = () => {
         );
         const projects: GraphData[] = await res.json();
 
-        console.log(projects);
         setData(projects);
 
         socket.on("vote-update", (data) => {

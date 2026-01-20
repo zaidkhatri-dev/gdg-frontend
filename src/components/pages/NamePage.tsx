@@ -10,7 +10,6 @@ const NamePage = () => {
   useEffect(() => {
     const fetchPollData = async () => {
       try {
-        console.log("Hello")
         const res = await fetch(`${import.meta.env.VITE_API_URL}/poll`);
         const data: PollDataAPIResponse =
           (await res.json()) as PollDataAPIResponse;
