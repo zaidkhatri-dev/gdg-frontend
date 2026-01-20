@@ -68,6 +68,9 @@ const VotingPage = () => {
 
     const selectedProject = projects[selectedIdx];
 
+    localStorage.setItem("isVoted", "true");
+    navigate("/");
+
     try {
       const res = fetch(`${import.meta.env.VITE_API_URL}/vote`, {
         method: "POST",
@@ -87,9 +90,7 @@ const VotingPage = () => {
       console.error("Error:", error);
     }
 
-    localStorage.setItem("isVoted", "true");
 
-    navigate("/");
   };
 
   return (
