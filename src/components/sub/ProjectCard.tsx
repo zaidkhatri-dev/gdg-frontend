@@ -10,7 +10,7 @@ const ProjectCard = ({
   return (
     <div
       onClick={onSelect}
-      className={`flex border-2 py-1 px-1 rounded-xl gap-2 cursor-pointer min-w-83 lg:min-w-95 ${isSelected ? "bg-bbg text-bfg border-[#202226]" : "text-sfg border-pfg"}`}
+      className={`flex border-2 py-1 px-1 rounded-xl gap-2 cursor-pointer min-w-81 lg:min-w-95 ${isSelected ? "bg-bbg text-bfg border-[#202226]" : "text-sfg border-pfg"}`}
     >
       <div
         id="numberbox"
