@@ -11,7 +11,6 @@ import {
 } from "recharts";
 import type { GraphData } from "../../types/types";
 import { io } from "socket.io-client";
-import Waiting from "../sub/Waiting";
 
 const socket = io(`${import.meta.env.VITE_WS_URL}`);
 
@@ -47,15 +46,6 @@ const ResultPage = () => {
     fetchProjects();
   }, []);
 
-  if (startTimeStr) {
-    const startTime = new Date(startTimeStr);
-    const now = new Date();
-
-    if (now < startTime) {
-      return <Waiting startTimeStr={startTimeStr} />;
-    }
-  }
-
   const maxVotes = Math.max(...data.map((d) => d.votes));
 
   return (
@@ -87,7 +77,7 @@ const ResultPage = () => {
         </BarChart>
       </ResponsiveContainer>
       <h1>
-        Voting ends at {new Date(endTimeStr as string).toLocaleTimeString()}
+        Voting Duration - {new Date(startTimeStr as string).toLocaleTimeString()} to {new Date(endTimeStr as string).toLocaleTimeString()}
       </h1>
     </div>
   );
