@@ -4,7 +4,7 @@ import ProjectCard from "../sub/ProjectCard";
 import Conformation from "../sub/Conformation";
 import { useNavigate } from "react-router";
 import Ended from "../sub/Ended";
-import Waiting from "../sub/Waiting";
+import Countdown from "../sub/Countdown";
 
 const VotingPage = () => {
   const [selectedIdx, setSelectedIdx] = useState<null | number>(null);
@@ -39,7 +39,7 @@ const VotingPage = () => {
     const now = new Date();
 
     if (now < startTime && !(isVoted === "true")) {
-      return <Waiting startTimeStr={startTimeStr} />;
+      return <Countdown startTimeStr={startTimeStr} />;
     }
   }
 
